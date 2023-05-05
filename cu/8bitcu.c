@@ -6,3 +6,8 @@
 int main() {
     return 0;
 }
+
+//load the 8-bit cpu command to virtual ram
+void loadRam(char com) {
+    //code goes here
+}
