@@ -7,6 +7,7 @@ Very low-level code, works mostly with bit shifting and modifying.
 ### Architecture and functionality Reference
 [Reference for the cu architecture](https://minnie.tuhs.org/CompArch/Tutes/week03.html)
 
+8-Bit CPU circuit
 ![CU architecure](https://github.com/CmdIglo/cusim/blob/main/8bitcpu.png)
 :copyright:Warren Toomey
 
