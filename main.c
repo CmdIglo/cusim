@@ -2,14 +2,47 @@
 #include <stdlib.h>
 #include <stdbool.h>
 //used for sleep() function; Linux Users use: <unistd.h>
-#include <windows.h>
+//#include <windows.h>
+
+
+//returns irload bit
+int irload(int phase) {
+
+    /**
+     * TODO: binary exclusive or, or smth in that direction
+    */
+    if(phase == 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+
+}
 
 //template code snippet
 int main(int argc, char** argv) {
 
+    //instruction register load bit
+    //false, only true, if in phase 0 (IF&DE)
+    int _irload = 0;
+
     //the cpu command
     //has to be 16 wide, because it can either be a command for the 8- or the 16-Bit cpu
     char command[16];
+
+    /**
+     * Bit 0 = LSB, Bit 8/16 = MSB
+    */
+    //binary operation at bit 6&7 of instruction (16-Bit: 14&15)
+    char op1[2];
+    //binary operation at bit 4&5 of instruction (16-Bit: 12&13)
+    char op2[2];
+    //target register at bit 2&3 of instruction (16-Bit: 10&11)
+    char rd[2];
+    //source register at bit 0&1 of instruction (16-Bit: 8&9)
+    char rs[2];
+    //immediate byte of 16-Bit instruction, bit 0-7 of instruction
+    char immed[8];
 
     //get user input; 8-Bit cpu command
     printf("Type in a 8Bit cpu command: \n");
@@ -22,15 +55,22 @@ int main(int argc, char** argv) {
     int phase = 0;
 
     //while loop = CPU frequency
+    /**
+     * TODO: Switch statements can be rewritten with functions, like irload()
+    */
     while(running) {
+        printf("%d", irload(phase));
         //check which CPU Phase we are in
         switch(phase) {
             //fetch
             case 0:
+                //set irload to true
+                _irload++;
                 phase++;
                 break;
             //decode
             case 1:
+                _irload--;
                 phase++;
                 break;
             //fetch
@@ -40,11 +80,12 @@ int main(int argc, char** argv) {
             //execute
             case 3:
                 phase = 0;
+                return 0;
                 break;
         }
 
         //CPU frequency is 10Hz
-        sleep(0.1);
+        //sleep(0.1);
     }
 
     return 0;
