@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 //used for sleep() function; Linux Users use: <unistd.h>
 //#include <windows.h>
 
@@ -49,6 +50,31 @@ int main(int argc, char** argv) {
     scanf("%s", command);
     printf("%s\n", command);
 
+    //TODO: errors, check string concat
+    op1[0] = command[0];
+    op1[1] = command[1];
+
+    op2[0] = command[2];
+    op2[1] = command[3];
+
+    rd[0] = command[4];
+    rd[1] = command[5];
+
+    rs[0] = command[6];
+    rs[1] = command[7];
+
+    for(int i = 0; i<8; i++) {
+        immed[i] = command[8+i];
+    }
+
+    printf("------\n");
+    printf("op1: %s\n", op1);
+    printf("op2: %s\n", op2);
+    printf("data registry: %s\n", rd);
+    printf("source registry: %s\n", rs);
+    printf("immediate value (16-Bit): %s\n", immed);
+    printf("------\n");
+
     //sets if the cpu is running
     bool running = true;
     //phase of the cpu workflow
@@ -59,7 +85,7 @@ int main(int argc, char** argv) {
      * TODO: Switch statements can be rewritten with functions, like irload()
     */
     while(running) {
-        printf("%d", irload(phase));
+        printf("%d\n", irload(phase));
         //check which CPU Phase we are in
         switch(phase) {
             //fetch
