@@ -37,3 +37,21 @@ int dualMux(int pcsel, int one, int two) {
     }
 
 }
+
+//Program Counter logic
+int pc = 0;
+
+//returns the pc (if pcload)
+int getProgramCounter() {
+    return pc;
+}
+
+//increments the pc by 1 (phase #0 and phase #1 if 16-bit)
+int incProgramCounter() {
+    pc++;
+}
+
+//decrements the pc by 1
+int decProgramCounter() {
+    pc--;
+}

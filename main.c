@@ -2,9 +2,19 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-//used for sleep() function; Linux Users use: <unistd.h>
+//used for sleep() function Linux Users use: <unistd.h>
 //#include <windows.h>
 
+//own functions for CPU logic
+#include "lib/functions.c"
+
+/*
+    incProgramCounter()
+    decProgramCounter()
+    getProgramCounter()
+    dualMux()
+    quadMux()
+*/
 
 //returns irload bit
 int irload(int phase) {
@@ -93,9 +103,15 @@ int main(int argc, char** argv) {
                 //set irload to true
                 _irload++;
                 phase++;
+                //increment the pc
+                incProgramCounter();
                 break;
             //decode
             case 1:
+                //checks if a 16-Bit command has been passed by the user
+                if(length(command) == 16) {
+                    incProgramCounter(); //increment the pc by 1
+                }
                 _irload--;
                 phase++;
                 break;
