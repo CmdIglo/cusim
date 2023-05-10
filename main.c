@@ -7,6 +7,8 @@
 
 //own functions for CPU logic
 #include "lib/functions.c"
+//arithmetics logic unit
+#include "lib/alu.c"
 
 /*
     incProgramCounter()
