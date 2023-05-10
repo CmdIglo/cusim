@@ -66,15 +66,19 @@ int main(int argc, char** argv) {
     op1[0] = command[0];
     op1[1] = command[1];
 
+    //aluop
     op2[0] = command[2];
     op2[1] = command[3];
 
+    //data registry
     rd[0] = command[4];
     rd[1] = command[5];
 
+    //source registry
     rs[0] = command[6];
     rs[1] = command[7];
 
+    //immediate Byte
     for(int i = 0; i<8; i++) {
         immed[i] = command[8+i];
     }
