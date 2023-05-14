@@ -84,11 +84,30 @@ int main(int argc, char** argv) {
     }
 
     printf("------\n");
-    printf("op1: %s\n", op1);
-    printf("op2: %s\n", op2);
-    printf("data registry: %s\n", rd);
-    printf("source registry: %s\n", rs);
-    printf("immediate value (16-Bit): %s\n", immed);
+    /*
+    //check if the values are stored properly
+    printf("%d", op1[0] & 1);
+    printf("%d\n", op1[1] & 1);
+    printf("%d", op2[0] & 1);
+    printf("%d\n", op2[1] & 1);
+    printf("%d", rd[0] & 1);
+    printf("%d\n", rd[1] & 1);
+    printf("%d", rs[0] & 1);
+    printf("%d\n", rs[1] & 1);
+    printf("%d\n", immed[0] & 1);
+    */
+    printf("op1: \n");
+    printf("%d", op1[0] & 1);
+    printf("%d\n", op1[1] & 1);
+    printf("op2: \n");
+    printf("%d", op2[0] & 1);
+    printf("%d\n", op2[1] & 1);
+    printf("data registry: \n");
+    printf("%d", rd[0] & 1);
+    printf("%d\n", rd[1] & 1);
+    printf("source registry: \n");
+    printf("%d", rs[0] & 1);
+    printf("%d\n", rs[1] & 1);
     printf("------\n");
 
     //sets if the cpu is running
@@ -115,7 +134,7 @@ int main(int argc, char** argv) {
             //decode
             case 1:
                 //checks if a 16-Bit command has been passed by the user
-                if(length(command) == 16) {
+                if(strlen(command) == 16) {
                     incProgramCounter(); //increment the pc by 1
                 }
                 _irload--;

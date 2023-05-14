@@ -4,11 +4,6 @@
 
 #include <stdlib.h>
 
-//code goes here
-int main(void) {
-    return 0; //placeholder
-}
-
 /*
     Set the ALU operation
 */
