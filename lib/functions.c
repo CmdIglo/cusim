@@ -46,12 +46,18 @@ int getProgramCounter() {
     return pc;
 }
 
+//for test cases
+//set the program counter manually
+void setProgramCounter(int pc_in) {
+    pc = pc_in;
+}
+
 //increments the pc by 1 (phase #0 and phase #1 if 16-bit)
-int incProgramCounter() {
+void incProgramCounter() {
     pc++;
 }
 
 //decrements the pc by 1
-int decProgramCounter() {
+void decProgramCounter() {
     pc--;
 }

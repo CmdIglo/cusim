@@ -1,0 +1,22 @@
+"""""""""""""""""""""""""""""""""
+"       Design of the CPU       "
+"""""""""""""""""""""""""""""""""
+
+Instruction set:
+MW      -> Move word
+SW      -> Store word 
+LW      -> Load word
+AND     -> Logical and
+OR      -> Logical or
+POP     -> Get data from top of stack
+PUSH    -> Push data onto stack
+JNZ     -> Jump if not zero
+
+
+
+"""""""""""""""""""""""""""""
+"       Architecture        "
+"""""""""""""""""""""""""""""
+
+- "Physical memory" is the memory.txt file containing the instructions in Hex
+- To write "Applications" for the cpu, you will have to write the hex instructions to the memory file

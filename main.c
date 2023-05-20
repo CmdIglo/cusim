@@ -18,6 +18,10 @@
     quadMux()
 */
 
+/**
+ * TODO: CPU has to read from memory.txt
+*/
+
 //returns irload bit
 int irload(int phase) {
 
@@ -111,7 +115,8 @@ int main(int argc, char** argv) {
     printf("------\n");
 
     //sets if the cpu is running
-    bool running = true;
+    //TODO: currently false, because logic in while loop not complete
+    bool running = false;
     //phase of the cpu workflow
     int phase = 0;
 
@@ -153,6 +158,17 @@ int main(int argc, char** argv) {
 
         //CPU frequency is 10Hz
         //sleep(0.1);
+    }
+
+    //test part of script
+    printf("\nTESTS: \n");
+    setProgramCounter(0);
+    for(int i = 0; i < 10; i++) {
+        printf("%d ", getProgramCounter());
+        incProgramCounter();
+        if(i == 9) {
+            printf("\n");
+        }
     }
 
     return 0;
