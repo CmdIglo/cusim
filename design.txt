@@ -9,8 +9,10 @@ LW      -> Load word
 AND     -> Logical and
 OR      -> Logical or
 XOR     -> Logical xor
-ADD     -> Add 1 to number
-SUB     -> Subtract 1 from number
+ADD     -> Add two numbers
+SUB     -> Subtract two numbers
+ADD1    -> Add 1 to number
+SUB1    -> Subtract 1 from number
 POP     -> Get data from top of stack
 PUSH    -> Push data onto stack
 JNZ     -> Jump if not zero

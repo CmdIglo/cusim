@@ -12,8 +12,22 @@ int setAluOp(int op) {
 }
 
 /*
-    Get the output from op2 operation 
+    Set first operand
 */
-int getOp(int op2) {
+void setFOp(int f) {
+
+}
+
+/*
+    Set second operand
+*/
+void setSOp(int s) {
+
+}
+
+/*
+    Get the output  
+*/
+int getOut() {
     return 0; //placeholder
 }
