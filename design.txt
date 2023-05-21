@@ -3,19 +3,21 @@
 """""""""""""""""""""""""""""""""
 
 Instruction set:
-MW      -> Move word
-SW      -> Store word 
-LW      -> Load word
-AND     -> Logical and
-OR      -> Logical or
-XOR     -> Logical xor
-ADD     -> Add two numbers
-SUB     -> Subtract two numbers
-ADD1    -> Add 1 to number
-SUB1    -> Subtract 1 from number
-POP     -> Get data from top of stack
-PUSH    -> Push data onto stack
-JNZ     -> Jump if not zero
+Instruction     Opcode      Description
+MW                          -> Move word
+SW                          -> Store word 
+LW                          -> Load word
+AND                         -> Logical and
+OR                          -> Logical or
+XOR                         -> Logical xor
+ADD                         -> Add two numbers
+SUB                         -> Subtract two numbers
+ADD1                        -> Add 1 to number
+SUB1                        -> Subtract 1 from number
+POP                         -> Get data from top of stack
+PUSH                        -> Push data onto stack
+JNZ                         -> Jump if not zero
+HALT                        -> Stop program
 
 
 
